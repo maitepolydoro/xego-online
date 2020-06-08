@@ -1,0 +1,86 @@
+
+<po-page-default p-title="Nova Solicitação">
+    <po-stepper #stepper  >
+        <po-step  p-label="Busca" [p-can-active-next-step]="canActiveNextStep.bind(this, tripRequest)">   
+            <po-widget
+                class="po-md-12"
+                p-primary-label="Próximo"
+                (p-primary-action)="stepper.next()">                 
+                    <form #tripRequest="ngForm">
+                    <div class="po-row space-row">
+                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckIn"  p-required [(ngModel)]="tripRequest.checkIn" p-label="Check-in"> </po-datepicker>
+                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckOut"  p-required [(ngModel)]="tripRequest.checkOut" p-label="Check-out"> </po-datepicker>
+                            <po-number class="po-sm-4 po-xl-1" name="inputQuantity" p-required [(ngModel)]="tripRequest.quantity" p-label="Qtd. Pessoas"> </po-number>
+                            
+                    </div>
+                    <div class="po-row space-row">
+                        <po-widget class="po-xl-12" p-title="Localização">
+                            <po-input class="po-xl-12" name="inputLocal" [(ngModel)]="localInput" p-clean p-icon="po-icon po-icon-search"></po-input>
+                            <div class="po-xl-12">
+                                <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+                                    <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+                            </agm-map>
+                            </div>
+                            <po-container p-no-shadow class="po-xl-12">
+                                <po-info p-label="Média da Região" p-orientation="horizontal" [p-value]="averagePrice"> </po-info>
+                            </po-container>
+                        </po-widget>
+                    </div>
+                    <div class="po-row space-row">
+                        <po-container p-no-shadow>
+                            <po-tabs class="po-sm-12">
+                                <po-tab p-active="true" p-label="Gostaria de Pagar">
+                                    <po-decimal p-icon="po-icon po-icon-finance" class="po-xl-6 po-sm-12 space-row" p-decimals-length="2" name="inputAverage"
+                                    p-label="Valor: " p-help="Nesse modo você irá receber seu orçamento em até 24h"></po-decimal>                                                        
+                                </po-tab>
+                                <po-tab p-label="Minha Oferta Garantida">
+                                    <po-decimal p-readonly p-icon="po-icon po-icon-finance" class="po-xl-6 po-sm-12 space-row" p-decimals-length="2" name="inputAverage" 
+                                    p-label="Valor médio da oferta garantida: " p-help="Nesse modo você poderá escolher sua oferta na hora!"></po-decimal>    
+                                </po-tab>
+                            </po-tabs>
+                        </po-container>                          
+                    </div>
+                    </form> 
+        </po-widget>
+            
+        </po-step>
+        <po-step p-label="Step 2" [p-label]="" [p-can-active-next-step]="validOffer">
+                <po-widget
+                class="po-md-12"
+                p-primary-label="Anterior"
+                (p-primary-action)="stepper.previous()">            
+
+                    <po-widget class="po-md-3 " p-primary-label="Quero este!" (p-primary-action)="closeOk()">
+                            <img src="assets/hotel1.jpg" width="250" height="200" />
+                            <div class="po-lg-12">
+                            <p class="po-font-title">R$ 810,00</p>
+                            <p class="po-font-text-large-bold">Hotel Ibis - Av. Santo Amaro, 2340</p>
+                            <p class="po-font-text">Quarto Individual</p>
+                            <p class="po-font-text">Banheiro Privativo</p>
+                            <p class="po-font-text">Café da manhã</p>
+                            </div>
+                    </po-widget>
+                    <po-widget class="po-md-3" p-primary-label="Quero este!" (p-primary-action)="closeOk()">
+                            <img src="assets/hotel2.jpg" width="250" height="200" />
+                            <div class="po-lg-12">
+                            <p class="po-font-title">R$ 805,00</p>
+                            <p class="po-font-text-large-bold">Hotel Lala - Av. Santos Dumont, 100</p>
+                            <p class="po-font-text">Quarto compartilhado</p>
+                            <p class="po-font-text">Banheiro compartilhado</p>
+                            <p class="po-font-text">Café da manhã</p>
+                            </div>
+                    </po-widget>
+                </po-widget>
+        </po-step>
+    </po-stepper>
+    <po-modal #modalOk p-size="sm" p-hide-close p-title="Sucesso!" [p-primary-action]="primaryAction">
+            <div class="po-xl-12 modalContext">
+                <img src="assets/check.gif">
+                <div>
+                    Oferta resgatada com sucesso! Tenha uma boa estadia!
+                </div>
+            </div>
+
+        </po-modal>
+    
+</po-page-default>

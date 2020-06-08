@@ -1,0 +1,19 @@
+agm-map {
+    height: 15em;
+   }
+
+.options {
+    text-align: center;
+}
+
+.modalContext {
+    text-align: center;
+}
+
+.middle-row {
+    text-align: center;
+}
+
+.read-only {
+    background-color: #dddcde;
+}

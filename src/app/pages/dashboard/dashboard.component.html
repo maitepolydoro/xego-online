@@ -1,0 +1,33 @@
+<po-page-default p-title="Dashboard">
+    <div class="po-row">
+        <po-widget class="po-lg-4 po-mt-2" p-height="200">
+            <div class="po-font-title po-text-center po-pt-5">1</div>
+            <div class="po-text-center">Novas Solicitações</div>
+        </po-widget>
+        <po-widget class="po-lg-4 po-mt-2" p-height="200">
+            <div class="po-font-title po-text-center po-pt-5">2</div>
+            <div class="po-text-center">Solicitações em Espera</div>
+        </po-widget> 
+        <po-widget p-title="Próxima viagem" class="po-lg-4 po-mt-2" p-height="200">
+            <div class="po-font-title po-text-center">Quarta Feira, 15 de agosto de 2020.</div>
+        </po-widget>  
+    </div>
+    <div class="po-row">
+        <po-chart class="po-xl-6"
+        [p-series]="[
+            { category: 'Novas', value: 1 },
+            { category: 'Em Análise', value: 2 },
+            { category: 'Concluídas', value: 5 }
+        ]"
+        >
+        </po-chart>
+        <po-chart class="po-xl-6"
+        [p-series]="[
+            { category: 'Novas', value: 1 },
+            { category: 'Em Análise', value: 2 },
+            { category: 'Concluídas', value: 5 }
+        ]"
+        >
+        </po-chart>
+    </div>
+</po-page-default>

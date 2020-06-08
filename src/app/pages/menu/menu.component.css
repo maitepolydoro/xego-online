@@ -1,0 +1,13 @@
+::ng-deep .po-menu{
+    background-color: #2d353c;
+}
+
+::ng-deep .po-menu-item {
+    color: #8e9398;
+    border-top: 0px solid #dadedf;
+}
+
+::ng-deep .po-menu-item:hover {
+    color: #dadedf;
+    background-color: #8a05be;
+}

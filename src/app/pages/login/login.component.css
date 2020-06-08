@@ -1,0 +1,12 @@
+::ng-deep .po-tooltip, .po-tooltip-arrow {
+        display: none;
+}
+
+::ng-deep .po-page-login-info-icon-container .po-page-login-body .po-field-icon.po-icon-info{    
+    cursor: none;
+}
+
+::ng-deep .po-page-login-body .po-field-icon.po-icon-info {
+    color: transparent;
+}
+

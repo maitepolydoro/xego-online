@@ -1,0 +1,31 @@
+::ng-deep .po-button-primary {
+    background-color: #8241a4;
+    border-color: #8241a4;
+    color: #fff;
+}
+
+::ng-deep .po-button-primary:hover {
+    background-color: #c5c5c5;
+    border-color: #c5c5c5;
+    color: #fff;
+}
+
+::ng-deep .po-button {
+    background-color: #8241a4;
+    color: #fff;
+}
+
+::ng-deep .po-input:read-only  {
+    background-color: #dddcde;
+}
+
+
+ @media (max-width: 540px) {
+    ::ng-deep .po-page-login-button.po-page-login-field-size {
+        width: calc(100% - 21px);
+    }
+
+    ::ng-deep  .po-page-login-form {
+        padding-left: 20px;
+    }
+}
