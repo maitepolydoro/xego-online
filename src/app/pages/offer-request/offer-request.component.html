@@ -8,14 +8,14 @@
                 (p-primary-action)="stepper.next()">                 
                     <form #tripRequest="ngForm">
                     <div class="po-row space-row">
-                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckIn"  p-required [(ngModel)]="tripRequest.checkIn" p-label="Check-in"> </po-datepicker>
-                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckOut"  p-required [(ngModel)]="tripRequest.checkOut" p-label="Check-out"> </po-datepicker>
-                            <po-number class="po-sm-4 po-xl-1" name="inputQuantity" p-required [(ngModel)]="tripRequest.quantity" p-label="Qtd. Pessoas"> </po-number>
+                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckIn"  p-required p-label="Check-in"> </po-datepicker>
+                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckOut"  p-required  p-label="Check-out"> </po-datepicker>
+                            <po-number class="po-sm-4 po-xl-1" name="inputQuantity" p-required p-label="Qtd. Pessoas"> </po-number>
                             
                     </div>
                     <div class="po-row space-row">
                         <po-widget class="po-xl-12" p-title="Localização">
-                            <po-input class="po-xl-12" name="inputLocal" [(ngModel)]="localInput" p-clean p-icon="po-icon po-icon-search"></po-input>
+                            <po-input class="po-xl-12" name="inputLocal" p-clean p-icon="po-icon po-icon-search"></po-input>
                             <div class="po-xl-12">
                                 <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
                                     <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
