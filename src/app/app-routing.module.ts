@@ -4,8 +4,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { MenuComponent } from './pages/menu/menu.component';
-import { MyRequestsComponent } from './pages/my-requests/my-requests.component';
 import { OfferRequestComponent } from './pages/offer-request/offer-request.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { MyTripsComponent } from './pages/my-trips/my-trips.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: '', component: MenuComponent, canActivate: [AuthGuardService], children: [
     { path: '', component: DashboardComponent, canActivate: [AuthGuardService]  },
     { path: 'offer-request', component: OfferRequestComponent, canActivate: [AuthGuardService]  },
-    { path: 'my-requests', component: MyRequestsComponent, canActivate: [AuthGuardService]  }
+    { path: 'my-trips', component: MyTripsComponent, canActivate: [AuthGuardService]  },
+    { path: 'user-profile', component: UserProfileComponent, canActivate: [AuthGuardService]  }
   ]
   },
   {

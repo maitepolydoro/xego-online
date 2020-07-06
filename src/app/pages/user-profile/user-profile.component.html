@@ -1,0 +1,18 @@
+<po-page-default p-title="Meu Perfil">
+    <po-container class="po-sm-12" p-no-shadow p-no-border>
+        <po-avatar class="po-md-2" p-size="xl" [p-src]="avatar" (p-click)="modal.open()"> </po-avatar>
+        <div class="po-md-10 baseData">
+            <p><strong>Maria Silva da Cunha</strong> </p>
+            <p><strong>Área de Inovação</strong> </p>
+            <p><strong>maria.hotel@hotelabc.com.br</strong> </p>
+          </div>
+    </po-container>
+    <po-container p-no-border p-no-shadow class="po-sm-12" p-title="Próxima viagem">
+        <po-table  
+        p-hide-columns-manager
+        p-sort="true"
+        [p-items]="usertrips"
+        [p-columns]="columns">
+        </po-table>
+    </po-container>
+</po-page-default>

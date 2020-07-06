@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PoMenuItem } from '@po-ui/ng-components';
+import { PoChartType } from '@po-ui/ng-components/lib/components/po-chart';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,7 @@ import { PoMenuItem } from '@po-ui/ng-components';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  type: PoChartType;
   constructor() { }
 
   ngOnInit(): void {

@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit {
   };
 
   profileActions: Array<PoToolbarAction> = [
+  { icon: 'po-icon-user', label: 'Meu Perfil', type: 'danger', separator: true, action: item => this.userProfile() },
   { icon: 'po-icon-exit', label: 'Sair', type: 'danger', separator: true, action: item => this.logout() }
   ];
 
@@ -31,7 +32,7 @@ export class MenuComponent implements OnInit {
   menus: Array<PoMenuItem> = [
     { label: 'Dashboard', icon: 'po-icon po-icon-home', action: this.onClickMenu.bind(this)},    
     { label: 'Nova solicitação', icon: 'po-icon po-icon-touch', action: this.onClickMenu.bind(this)},
-    { label: 'Minhas solicitações', icon: 'po-icon po-icon-calendar-ok', action: this.onClickMenu.bind(this)}
+    { label: 'Minhas viagens', icon: 'po-icon po-icon-calendar-ok', action: this.onClickMenu.bind(this)}
   ];
 
   constructor(private router: Router) { }
@@ -51,17 +52,22 @@ export class MenuComponent implements OnInit {
   }
 
   onClickMenu(menu: PoMenuItem) {
+    console.log(menu.label);
     switch (menu.label) {
       case 'Nova solicitação':
         this.router.navigate(['/offer-request']);
       break;      
-      case 'Minhas solicitações':
-          this.router.navigate(['/my-requests']);
+      case 'Minhas viagens':
+          this.router.navigate(['/my-trips']);
         break;
       default:
           this.router.navigate(['/']);
         break;
     }   
+  }
+
+  userProfile() {
+    this.router.navigate(['user-profile']);
   }
 
   logout() {

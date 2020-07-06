@@ -8,18 +8,20 @@ import { PoPageLoginModule } from '@po-ui/ng-templates';
 import { MenuComponent } from './menu/menu.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
-import { MyRequestsComponent } from './my-requests/my-requests.component';
 import { AgmCoreModule } from '@agm/core';
 import { OfferRequestComponent } from './offer-request/offer-request.component';
 import { FormsModule } from '@angular/forms';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MyTripsComponent } from './my-trips/my-trips.component';
 
 @NgModule({
   declarations: [   
     LoginComponent,
     DashboardComponent,
     MenuComponent,
-    MyRequestsComponent,
-    OfferRequestComponent
+    OfferRequestComponent,
+    UserProfileComponent,
+    MyTripsComponent
   ],
   imports: [
     CommonModule,

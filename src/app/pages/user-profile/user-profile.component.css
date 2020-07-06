@@ -1,0 +1,13 @@
+
+ @media (min-width: 540px) {
+    .baseData {
+        padding-top: 3em;
+    }
+ }
+
+
+ @media (min-width: 768px) and (max-width: 1024px) {
+    .baseData {
+        padding-left: 3em;
+    }
+ }
