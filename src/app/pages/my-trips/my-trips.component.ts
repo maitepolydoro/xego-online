@@ -18,7 +18,7 @@ export class MyTripsComponent implements OnInit {
       { property: 'code', type: 'number', width: '8%', visible: false },
       { property: 'hotelDescription', label: 'Data', },
       { property: 'local', label: 'Local', },
-      { property: 'date', label: 'Data', type: 'dateTime' },
+      { property: 'date', label: 'Data', type: 'date' },
       {
         property: 'status',
         type: 'label',
@@ -31,16 +31,16 @@ export class MyTripsComponent implements OnInit {
       },
       {
         property: 'actions',
-        label: '',
+        label: ' ',
         type: 'icon',
         icons: [
           {
-            icon: 'po-icon-star',
+            icon: 'po-icon-copy',
             tooltip: 'Duplicar',
             value: 'duplicate'
           },
           {
-            icon: 'po-icon-export',
+            icon: 'po-icon-delete',
             tooltip: 'Cancelar',
             value: 'cancel'
           }

@@ -1,31 +1,14 @@
 <po-page-default p-title="Minhas Viagens">
 
-    <po-table p-hide-columns-manager p-sort="true" [p-columns]="columns" [p-items]="items" [p-striped]="true">
+    <po-table p-hide-columns-manager="true" [p-columns]="columns" [p-items]="items" [p-striped]="true">
         <ng-template p-table-row-template let-rowItem let-i="rowIndex" [p-table-row-template-show]="isNotApproved">
-          <po-widget p-title="Transport detail {{ rowItem.code }}">
+          <po-widget p-title="Status da solicitação">
             <div class="po-row">
-              <po-select
-                class="po-md-6"
-                name="status"
-                [(ngModel)]="rowItem.status"
-                p-label="Transport status"
-              >
-              </po-select>
-            </div>
-      
-            <div class="po-row">
-              <po-info
-                class="po-md-4"
-                p-label="Batch of product"
-                p-orientation="horizontal"
-                [p-value]="rowItem.batch_product"
-              >
-              </po-info>
-      
-              <po-info class="po-md-4" p-label="Driver" p-orientation="horizontal" [p-value]="rowItem.driver"> </po-info>
-      
-              <po-info class="po-md-4" p-label="License plate" p-orientation="horizontal" [p-value]="rowItem.license_plate">
-              </po-info>
+              <po-stepper readonly p-step-icons="true">
+                <po-step p-label="Enviado"></po-step>
+                <po-step p-label="Em aprovação"></po-step>
+                <po-step p-label="Aprovado"></po-step>
+              </po-stepper>
             </div>
           </po-widget>
         </ng-template>
