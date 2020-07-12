@@ -17,7 +17,10 @@ export class OfferRequestComponent implements OnInit {
   tripRequest = {} as ITripRequest;
   currentActiveStep: PoStepComponent;
   validOffer = false;
-  averagePrice = 0;
+  averagePrice = 300;
+  fixedOffer = true;
+  inputAverage = 0;
+  qtPeople = 0;
   constructor() { }
   @ViewChild(PoModalComponent, { static: true }) modalOk: PoModalComponent;
   
@@ -33,9 +36,10 @@ export class OfferRequestComponent implements OnInit {
   };
 
   canActiveNextStep(form: NgForm) {
-    console.log(form.valid);
-
-    //return form.valid;
+    console.log(this.inputAverage)
+    if(this.inputAverage === 0) {
+      this.fixedOffer = false;
+    }
     return true;
   }
 

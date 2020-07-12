@@ -1,0 +1,31 @@
+<po-page-default p-title="Financeiro">
+<div class="po-lg-4 po-md-12">
+    <po-widget class="po-md-12 po-mt-2" p-title="Total de Crédito">
+        <div class="po-font-subtitle po-text-center">R$ 500,00</div>
+        <div class="po-text-center">Atualizado: 09/07/2020</div>
+    </po-widget>
+    <po-widget p-height="300" class="po-md-12 po-mt-2" p-sort="true" p-title="Histórico">
+        <po-table [p-columns]="paymentHistory"></po-table>
+    </po-widget>
+</div>
+   
+    <po-widget p-title="Inserir créditos" class="po-md-6 po-lg-8 po-mt-2" >
+        <po-widget class="po-md-4" p-click="console.log('clicou')" p-height="200" >
+            <div class="center-text">
+                <po-avatar class="po-text-center" p-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNeuK4AphTrWIGrRXIG1qRzAxhXQuqPOYs7w&usqp=CAU" p-size="lg"></po-avatar>
+                <div class="po-text-center">Depósito ou Transferência Bancária</div>
+                <div class="po-text-center">(5% off)</div>
+            </div>
+        </po-widget>
+        <po-widget class="po-md-4" p-click="console.log('clicou')" p-height="200" >
+            <po-avatar class="po-text-center" p-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNeuK4AphTrWIGrRXIG1qRzAxhXQuqPOYs7w&usqp=CAU" p-size="lg"></po-avatar>
+            <div class="po-text-center">Paypal</div>
+        </po-widget>
+        <po-widget class="po-md-4" p-click="console.log('clicou')" p-height="200">
+            <po-avatar class="po-text-center" p-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNeuK4AphTrWIGrRXIG1qRzAxhXQuqPOYs7w&usqp=CAU" p-size="lg"></po-avatar>
+            <div class="po-text-center">PagSeguro</div>
+        </po-widget>
+    </po-widget>
+
+
+</po-page-default>

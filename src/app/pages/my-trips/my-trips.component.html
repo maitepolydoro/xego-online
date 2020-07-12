@@ -1,18 +1,15 @@
 <po-page-default p-title="Minhas Viagens">
+  <po-container style="height: 100%">
+    <po-table p-hide-columns-manager="true" p-sort="true" [p-columns]="columns" [p-items]="items" [p-striped]="true">
+      <ng-template p-table-row-template let-rowItem let-i="rowIndex" [p-table-row-template-show]="isNotApproved">
+        <po-widget p-title="Status da solicitação">
+            <p-steps [model]="rowItem.steps" [(activeIndex)]="rowItem.activeIndex" readonly="true"></p-steps>
+            <po-info *ngIf="rowItem.observation"  p-label="Observações" [p-value]="rowItem.observation"> </po-info>
+        </po-widget>
+      </ng-template>
+    </po-table>
+  </po-container>
 
-    <po-table p-hide-columns-manager="true" [p-columns]="columns" [p-items]="items" [p-striped]="true">
-        <ng-template p-table-row-template let-rowItem let-i="rowIndex" [p-table-row-template-show]="isNotApproved">
-          <po-widget p-title="Status da solicitação">
-            <div class="po-row">
-              <po-stepper readonly p-step-icons="true">
-                <po-step p-label="Enviado"></po-step>
-                <po-step p-label="Em aprovação"></po-step>
-                <po-step p-label="Aprovado"></po-step>
-              </po-stepper>
-            </div>
-          </po-widget>
-        </ng-template>
-      </po-table>
 
     
 </po-page-default>

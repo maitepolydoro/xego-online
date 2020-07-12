@@ -1,0 +1,26 @@
+<po-page-default p-title="Colaboradores">
+    <div class="xego-container">
+        <p-table [value]="users">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Status</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-user>
+                <tr>
+                    <td><span>{{user.id}}</span></td>
+                    <td style="display: flex;">
+                        <po-avatar p-size="sm" [p-src]="user.imageSrc" style="vertical-align: left"></po-avatar>
+                        <span>{{user.name}}</span>
+                    </td>
+                    <td >{{user.job_description}}</td>
+                    <td><po-tag p-orientation="horizontal" [p-value]="user.active === true ? 'ATIVO' : 'BLOQUEADO'" [p-color]="user.active === true ? 'color-10' : 'color-07'"></po-tag></td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+</po-page-default>

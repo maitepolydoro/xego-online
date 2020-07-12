@@ -1,6 +1,6 @@
 ::ng-deep .po-button-primary {
-    background-color: #8241a4;
-    border-color: #8241a4;
+    background-color: #2c056a;
+    border-color: #2c056a;
     color: #fff;
 }
 
@@ -11,7 +11,7 @@
 }
 
 ::ng-deep .po-button {
-    background-color: #8241a4;
+    background-color: #2c056a;
     color: #fff;
 }
 
@@ -19,7 +19,75 @@
     background-color: #dddcde;
 }
 
+::ng-deep .po-container {
+    background-color: white;
+}
 
+::ng-deep .po-page {
+    background-color: #f5f5f5;
+}
+
+::ng-deep .po-toolbar {
+    background-color: #f5f5f5;
+}
+
+::ng-deep .po-table .po-table-header {
+    color:#2c056a;
+    border-bottom: 2px solid #2c056a57;
+}
+::ng-deep .po-table-column-icons {
+    color:#2c056a;
+}
+::ng-deep .po-tag-value {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+::ng-deep .po-stepper-step-default .po-stepper-circle-with-icon {
+    background-color: #2c056a;
+}
+
+::ng-deep .po-stepper-step-default .po-stepper-circle {
+    border-color: #2c056a;
+    color: #2c056a; 
+}
+
+::ng-deep .po-table-column-detail-toggle .po-icon-arrow-down {
+    color: #2c056a;
+}
+
+::ng-deep .po-toolbar-icon {
+    color: #2c056a;
+}
+
+::ng-deep .po-popup-item-default {
+    color: #2c056a;
+}
+
+::ng-deep .po-table-column-detail-toggle .po-icon-arrow-up {
+    color: #2c056a;
+}
+
+::ng-deep .po-menu-mobile {
+    background-color: #f5f5f5;
+}
+
+::ng-deep  .po-stepper-step-default .po-stepper-label {
+    border-color: #2c056a;
+    color: #2c056a;
+}
+
+::ng-deep .po-wrapper {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 1024px) {
+    ::ng-deep .ui-table table {
+        table-layout: auto;
+    }
+}
+
+/* MOBILE */
  @media (max-width: 540px) {
     ::ng-deep .po-page-login-button.po-page-login-field-size {
         width: calc(100% - 21px);
@@ -28,4 +96,9 @@
     ::ng-deep  .po-page-login-form {
         padding-left: 20px;
     }
+
+.center-text {
+    text-align: center;
 }
+}
+

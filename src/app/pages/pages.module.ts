@@ -13,6 +13,14 @@ import { OfferRequestComponent } from './offer-request/offer-request.component';
 import { FormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyTripsComponent } from './my-trips/my-trips.component';
+import { UserCrudComponent } from './user-crud/user-crud.component';
+import { PaymentsComponent } from './payments/payments.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ChartModule } from 'primeng/chart';
+import {TableModule} from 'primeng/table';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PoTagModule } from '@po-ui/ng-components';
+import {StepsModule} from 'primeng/steps';
 
 @NgModule({
   declarations: [   
@@ -21,11 +29,19 @@ import { MyTripsComponent } from './my-trips/my-trips.component';
     MenuComponent,
     OfferRequestComponent,
     UserProfileComponent,
-    MyTripsComponent
+    MyTripsComponent,
+    UserCrudComponent,
+    PaymentsComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
+    ScrollingModule,
+    PoTagModule,
+    ChartModule,    
+    TableModule,
+    StepsModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot([]),
     AppRoutingModule,

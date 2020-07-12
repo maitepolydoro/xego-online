@@ -1,17 +1,42 @@
 <po-page-default p-title="Meu Perfil">
-    <po-container class="po-sm-12" p-no-shadow p-no-border>
-        <po-avatar class="po-md-2" p-size="xl" > </po-avatar>
-        <div class="po-md-10 baseData">
-            <p><strong>Maria Silva da Cunha</strong> </p>
-            <p><strong>Área de Inovação</strong> </p>
-            <p><strong>maria.hotel@hotelabc.com.br</strong> </p>
+    <po-widget class="po-md-12">
+        <div class="po-row">
+          <div class="po-lg-3">
+            <po-avatar class="po-md-2" p-src="https://www.shareicon.net/data/512x512/2016/05/24/770117_people_512x512.png" p-size="xl" > </po-avatar>
           </div>
-    </po-container>
-    <po-container p-no-border p-no-shadow class="po-sm-12" p-title="Próxima viagem">
+          <div class="po-lg-9">
+            <p class="po-font-title">Carlos José de Souza</p>
+            <p class="po-font-text-large-bold">Desenvolvedor de Software</p>
+            <p class="po-font-text">carlos@tecnologia.com.br</p>
+            <hr />
+            <p class="po-font-text">Viagens: 9 | Gastos: R$ 500,00 </p>
+          </div>
+        </div>
+      </po-widget>
+    <po-widget class="po-sm-4" p-height="500" p-title="Contatos">
+      <p-table [value]="users">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Cargo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+            <tr>
+                <td>
+                    <po-avatar class="po-sm-4" p-size="sm" [p-src]="user.imageSrc" style="vertical-align: left"></po-avatar>
+                    <span class="po-sm-8">{{user.name}}</span>
+                </td>
+                <td>{{user.job_description}}</td>                
+            </tr>
+        </ng-template>
+    </p-table>
+    </po-widget>  
+    <po-widget class="po-sm-8" p-height="500" p-title="Histórico">
         <po-table  
             p-hide-columns-manager
             p-sort="true"
             [p-columns]="columns">
         </po-table>
-    </po-container>
+    </po-widget>
 </po-page-default>

@@ -1,5 +1,5 @@
 ::ng-deep .po-menu{
-    background-color: #2d353c;
+    background-image: linear-gradient(#2c056a, #2d353c);
 }
 
 ::ng-deep .po-menu-item {
@@ -9,5 +9,9 @@
 
 ::ng-deep .po-menu-item:hover {
     color: #dadedf;
-    background-color: #8a05be;
+    opacity: 0.2;
+}
+
+::ng-deep .po-menu-logo {
+    margin: 2%;
 }

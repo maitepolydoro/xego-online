@@ -1,33 +1,43 @@
 <po-page-default p-title="Dashboard">
-    <div class="po-row">
-        <po-widget class="po-lg-4 po-mt-2" p-height="200">
-            <div class="po-font-title po-text-center po-pt-5">1</div>
-            <div class="po-text-center">Novas Solicitações</div>
+    <div class="po-lg-12">
+        <po-widget p-title="Média de Custo Viagem" class="po-lg-3 po-md-6 po-sm-12" p-height="220">
+            <div class="po-font-title po-text-center po-pt-5">R$ 200,00</div>            
         </po-widget>
-        <po-widget class="po-lg-4 po-mt-2" p-height="200">
-            <div class="po-font-title po-text-center po-pt-5">2</div>
-            <div class="po-text-center">Solicitações em Espera</div>
+        <po-widget p-title="Valor Economizado" class="po-lg-3 po-md-6 po-sm-12" p-height="220">
+            <div class="po-font-title po-text-center po-pt-5">R$ 300,00</div>
         </po-widget> 
-        <po-widget p-title="Próxima viagem" class="po-lg-4 po-mt-2" p-height="200">
-            <div class="po-font-title po-text-center">Quarta Feira, 15 de agosto de 2020.</div>
+        <po-widget p-title="Valor em crédito" class="po-lg-3 po-md-6 po-sm-12" p-height="220">
+            <div class="po-font-title po-text-center po-pt-5">R$ 500,00</div>
         </po-widget>  
+        <po-widget p-title="Total de Viagens" class="po-lg-3 po-md-6 po-sm-12" p-height="220">
+            <div class="po-font-title po-text-center po-pt-5">2</div>
+        </po-widget> 
     </div>
-    <div class="po-row">
-        <po-chart class="po-xl-6"
-        [p-series]="[
-            { category: 'Novas', value: 1 },
-            { category: 'Em Análise', value: 2 },
-            { category: 'Concluídas', value: 5 }
-        ]"
-        >
-        </po-chart>
-        <po-chart class="po-xl-6"
-        [p-series]="[
-            { category: 'Novas', value: 1 },
-            { category: 'Em Análise', value: 2 },
-            { category: 'Concluídas', value: 5 }
-        ]"
-        >
-        </po-chart>
+    <div class="po-lg-12">
+        <po-widget class="po-lg-4 po-md-12 po-sm-12 " p-title="Colaboradores">
+            <!-- TABLE COLABORADORES -->
+            <p-table [value]="users">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Status</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-user>
+                    <tr>
+                        <td style="display: flex;">
+                            <po-avatar p-size="sm" [p-src]="user.imageSrc" style="vertical-align: left"></po-avatar>
+                            <span>{{user.name}}</span>
+                        </td>
+                        <td >{{user.job_description}}</td>
+                        <td><po-tag p-orientation="horizontal" [p-value]="user.active === true ? 'ATIVO' : 'BLOQUEADO'" [p-color]="user.active === true ? 'color-10' : 'color-07'"></po-tag></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </po-widget>  
+        <po-widget class="po-lg-8 po-md-12 po-sm-12 " p-title="Quantidade de viagens">
+            <p-chart type="bar" [data]="data"></p-chart>
+        </po-widget>
     </div>
 </po-page-default>
