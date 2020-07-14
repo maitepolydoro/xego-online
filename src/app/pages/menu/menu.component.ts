@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+  level = 1;
   profile: PoToolbarProfile = {
     avatar: 'https://www.shareicon.net/data/512x512/2016/05/24/770117_people_512x512.png',
     subtitle: 'carlos@empresa.com.br',
@@ -39,8 +39,9 @@ export class MenuComponent implements OnInit {
           { label: 'Dashboard', icon: 'po-icon po-icon-home', action: this.onClickMenu.bind(this)},    
           { label: 'Nova solicitação', icon: 'po-icon po-icon-touch', action: this.onClickMenu.bind(this)},
           { label: 'Minhas viagens', icon: 'po-icon po-icon-calendar-ok', action: this.onClickMenu.bind(this)},
+          { label: 'Reservas', icon: 'po-icon po-icon-warehouse', action: this.onClickMenu.bind(this)},    
           { label: 'Colaboradores', icon: 'po-icon po-icon-users', action: this.onClickMenu.bind(this)},
-          { label: 'Financeiro', icon: 'po-icon po-icon-money', action: this.onClickMenu.bind(this)}
+          { label: 'Meus Créditos', icon: 'po-icon po-icon-money', action: this.onClickMenu.bind(this)}
         ];
         break;
       case 1:
@@ -56,11 +57,18 @@ export class MenuComponent implements OnInit {
             { label: 'Nova solicitação', icon: 'po-icon po-icon-touch', action: this.onClickMenu.bind(this)},
             { label: 'Minhas viagens', icon: 'po-icon po-icon-calendar-ok', action: this.onClickMenu.bind(this)},  
           ];
-          break;        
+          break;       
+      case 3:
+            menuOptions = [
+              { label: 'Dashboard', icon: 'po-icon po-icon-home', action: this.onClickMenu.bind(this)},    
+              { label: 'Reservas', icon: 'po-icon po-icon-home', action: this.onClickMenu.bind(this)},    
+              { label: 'Nova solicitação', icon: 'po-icon po-icon-touch', action: this.onClickMenu.bind(this)},
+            ];
+            break;            
       default:
         break;
     }
-    menuOptions.push({ label: 'Meu Perfil', icon: 'po-icon po-icon-user', action: this.onClickMenu.bind(this)})
+    menuOptions.push({ label: 'Meu Perfil', icon: 'po-icon po-icon-warehouse', action: this.onClickMenu.bind(this)})
     menuOptions.push({ label: 'Sair', icon: 'po-icon po-icon-exit', action: this.onClickMenu.bind(this)})
 
     return menuOptions;
@@ -122,6 +130,9 @@ export class MenuComponent implements OnInit {
         break;
       case 'Meu Perfil':
         this.router.navigate(['user-profile']);
+        break;
+      case 'Pedidos':
+        this.router.navigate(['orders']);
         break;
       case 'Sair':
           this.logout();

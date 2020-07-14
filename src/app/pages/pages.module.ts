@@ -21,6 +21,8 @@ import {TableModule} from 'primeng/table';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PoTagModule } from '@po-ui/ng-components';
 import {StepsModule} from 'primeng/steps';
+import {ButtonModule} from 'primeng/button';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [   
@@ -31,7 +33,8 @@ import {StepsModule} from 'primeng/steps';
     UserProfileComponent,
     MyTripsComponent,
     UserCrudComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    OrdersComponent
   ],
   imports: [
     CommonModule,
@@ -40,6 +43,7 @@ import {StepsModule} from 'primeng/steps';
     PoTagModule,
     ChartModule,    
     TableModule,
+    ButtonModule,
     StepsModule,
     BrowserAnimationsModule,
     FormsModule,

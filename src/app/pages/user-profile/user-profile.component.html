@@ -1,5 +1,6 @@
 <po-page-default p-title="Meu Perfil">
-    <po-widget class="po-md-12">
+  <div class="xego-container">
+
         <div class="po-row">
           <div class="po-lg-3">
             <po-avatar class="po-md-2" p-src="https://www.shareicon.net/data/512x512/2016/05/24/770117_people_512x512.png" p-size="xl" > </po-avatar>
@@ -12,8 +13,8 @@
             <p class="po-font-text">Viagens: 9 | Gastos: R$ 500,00 </p>
           </div>
         </div>
-      </po-widget>
-    <po-widget class="po-sm-4" p-height="500" p-title="Contatos">
+        <po-divider></po-divider>
+    <po-widget p-no-shadow class="po-sm-4" p-height="500" p-title="Contatos">
       <p-table [value]="users">
         <ng-template pTemplate="header">
             <tr>
@@ -39,4 +40,5 @@
             [p-columns]="columns">
         </po-table>
     </po-widget>
+  </div>
 </po-page-default>

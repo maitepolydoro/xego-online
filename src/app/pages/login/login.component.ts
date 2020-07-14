@@ -43,10 +43,17 @@ export class LoginComponent implements OnInit {
           role: Roles.employer
         } 
       } else {
-        user = {
-          user: formData.login,
-          role: Roles.employee
-        } 
+        if (formData.login === 'hotel' && formData.password === '1234') {
+          user = {
+            user: formData.login,
+            role: Roles.hotel
+          } 
+        } else {
+          user = {
+            user: formData.login,
+            role: Roles.employee
+          } 
+        }
       }
 
       localStorage.setItem('user', JSON.stringify(user));

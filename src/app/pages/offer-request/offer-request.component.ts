@@ -21,10 +21,14 @@ export class OfferRequestComponent implements OnInit {
   fixedOffer = true;
   inputAverage = 0;
   qtPeople = 0;
+  checkIn = new Date();
+  checkOut = new Date();
   constructor() { }
   @ViewChild(PoModalComponent, { static: true }) modalOk: PoModalComponent;
   
-  ngOnInit(): void {    
+  ngOnInit(): void {  
+    this.checkIn.setDate(this.checkIn.getDate() + 1)  ;
+    this.checkOut.setDate(this.checkIn.getDate() + 5)  ;
   }
 
   primaryAction: PoModalAction = {
@@ -42,6 +46,7 @@ export class OfferRequestComponent implements OnInit {
     }
     return true;
   }
+
 
   closeOk() {
     this.modalOk.open();

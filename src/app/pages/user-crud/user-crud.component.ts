@@ -5,7 +5,7 @@ import { IUser } from 'src/app/interfaces/user.interface';
 @Component({
   selector: 'app-user-crud',
   templateUrl: './user-crud.component.html',
-  styleUrls: ['./user-crud.component.css']
+  styleUrls: ['./user-crud.component.scss']
 })
 export class UserCrudComponent implements OnInit {
   columns: Array<PoTableColumn>;

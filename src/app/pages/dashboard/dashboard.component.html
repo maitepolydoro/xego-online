@@ -16,7 +16,7 @@
     <div class="po-lg-12">
         <po-widget class="po-lg-4 po-md-12 po-sm-12 " p-title="Colaboradores">
             <!-- TABLE COLABORADORES -->
-            <p-table [value]="users">
+            <p-table [value]="users" styleClass="ui-table-customers">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Nome</th>
@@ -26,11 +26,15 @@
                 </ng-template>
                 <ng-template pTemplate="body" let-user>
                     <tr>
-                        <td style="display: flex;">
-                            <po-avatar p-size="sm" [p-src]="user.imageSrc" style="vertical-align: left"></po-avatar>
-                            <span>{{user.name}}</span>
+                        <td>
+                            <div>
+                                <po-avatar  style="vertical-align: middle" p-size="sm" [p-src]="user.imageSrc"></po-avatar>
+                            </div>
+                            <div>
+                                <span style="vertical-align: middle;">{{user.name}}</span>
+                            </div>                            
                         </td>
-                        <td >{{user.job_description}}</td>
+                        <td>{{user.job_description}}</td>
                         <td><po-tag p-orientation="horizontal" [p-value]="user.active === true ? 'ATIVO' : 'BLOQUEADO'" [p-color]="user.active === true ? 'color-10' : 'color-07'"></po-tag></td>
                     </tr>
                 </ng-template>

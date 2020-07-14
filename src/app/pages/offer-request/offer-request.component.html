@@ -1,70 +1,67 @@
 
 <po-page-default p-title="Nova Solicitação">
-    <po-container>
+    <div class="xego-container">
     <po-stepper #stepper >
-        <po-step  p-label="Busca" [p-can-active-next-step]="canActiveNextStep.bind(this, tripRequest)">   
-            <po-widget
-                class="po-md-12"
-                p-primary-label="Próximo"
-                (p-primary-action)="stepper.next()">                 
-                    <form #tripRequest="ngForm">
-                    <div class="po-row space-row">
-                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckIn" [(ngModel)]="binding" p-required p-label="Check-in"> </po-datepicker>
-                            <po-datepicker class="po-xl-3 po-sm-4" name="inputCheckOut"  p-required  p-label="Check-out"> </po-datepicker>
-                            <po-number class="po-sm-4 po-xl-1" name="inputQuantity" [(ngModel)]="qtPeople" p-required p-label="Qtd. Pessoas"> </po-number>
-                    </div>
-                    <div class="po-row space-row">
-                        <po-widget class="po-xl-12" p-title="Localização">
-                            <po-input class="po-xl-12" name="inputLocal" p-clean p-icon="po-icon po-icon-search"></po-input>
-                            <div class="po-xl-12">
-                                <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
-                                    <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
-                            </agm-map>
-                            </div>
-                            <po-container p-no-shadow class="po-xl-12">
-                                <po-info p-label="Média da Região" p-orientation="horizontal" [p-value]="averagePrice"> </po-info>
-                            </po-container>
-                        </po-widget>
-                    </div>
-                    <div class="po-row space-row">
-                        <po-container p-no-shadow>
-                            <!-- TABS -->
-                            <po-tabs class="po-sm-12">
-                                <po-tab p-active="true" p-label="Gostaria de Pagar">
-                                    <po-decimal p-icon="po-icon po-icon-finance" class="po-xl-6 po-sm-12 space-row" p-decimals-length="2" name="inputEditAverage" [(ngModel)]="inputAverage"
-                                    p-label="Valor: " p-help="Nesse modo você irá receber seu orçamento em até 24h"></po-decimal>                                                        
-                                </po-tab>
-                                <po-tab p-label="Minha Oferta Garantida">
-                                    <po-decimal p-readonly p-icon="po-icon po-icon-finance" class="po-xl-6 po-sm-12 space-row" p-decimals-length="2" name="inputAverage" 
-                                    p-label="Valor médio da oferta garantida: " [(ngModel)]="averagePrice" p-help="Nesse modo você poderá escolher sua oferta na hora!"></po-decimal>    
-                                </po-tab>
-                            </po-tabs>
-                        </po-container>                          
-                    </div>
-                    </form> 
-        </po-widget>
-            
-        </po-step>
-        <po-step p-label="Oferta" [p-label]="" [p-can-active-next-step]="validOffer">
+        <po-step class="po-sm-12" p-label="Escolha sua oferta" [p-can-active-next-step]="canActiveNextStep.bind(this, tripRequest)">                 
+            <form #tripRequest="ngForm">
                 <po-widget
-                class="po-md-12"
+                    p-primary-label="Próximo"
+                    (p-primary-action)="stepper.next()"> 
+                    <div class="po-lg-6 po-md-12">
+                        <div class="po-row space-row">
+                                <po-datepicker class="po-xl-4 po-sm-4" name="inputCheckIn" [(ngModel)]="checkIn" p-required p-label="Check-in"> </po-datepicker>
+                                <po-datepicker class="po-xl-4 po-sm-4" name="inputCheckOut" [(ngModel)]="checkOut" p-required  p-label="Check-out"> </po-datepicker>
+                                <po-number class="po-xl-4 po-sm-4 " name="inputQuantity" [(ngModel)]="qtPeople" p-required p-label="Qtd. Pessoas"> </po-number>
+                        </div>
+                        <div class="po-row space-row">
+                            <po-widget class="po-xl-12" p-title="Localização">
+                                <po-input class="po-xl-12" name="inputLocal" p-clean p-icon="po-icon po-icon-search"></po-input>
+                                <div class="po-xl-12">
+                                    <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+                                        <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+                                </agm-map>
+                                </div>
+                                <po-container p-no-shadow class="po-xl-12">
+                                    <po-info p-label="Média da Região" p-orientation="horizontal" [p-value]="averagePrice"> </po-info>
+                                </po-container>
+                            </po-widget>
+                        </div>
+                    </div>
+                    <div  class="po-lg-6 po-md-12">
+                        <!-- TABS -->
+                        <po-tabs class="po-sm-12">
+                            <po-tab p-active="true" p-label="Gostaria de Pagar">
+                                <po-decimal p-icon="po-icon po-icon-finance" class="po-xl-6 po-sm-12 space-row" p-decimals-length="2" name="inputEditAverage" [(ngModel)]="inputAverage"
+                                p-label="Valor: " p-help="Nesse modo você irá receber seu orçamento em até 24h"></po-decimal>                                                        
+                            </po-tab>
+                            <po-tab p-label="Minha Oferta Garantida">
+                                <po-decimal p-readonly p-icon="po-icon po-icon-finance" class="po-xl-6 po-sm-12 space-row" p-decimals-length="2" name="inputAverage" 
+                                p-label="Valor médio da oferta garantida: " [(ngModel)]="averagePrice" p-help="Nesse modo você poderá escolher sua oferta na hora!"></po-decimal>    
+                            </po-tab>
+                        </po-tabs>
+                    </div> 
+                </po-widget>
+            </form> 
+        </po-step>
+        <po-step p-label="Ofertas" [p-can-active-next-step]="validOffer">
+                <po-widget
                 p-primary-label="Anterior"
                 (p-primary-action)="stepper.previous()">            
                 <div *ngIf="fixedOffer === false">
-                    <po-widget class="po-md-3 " p-primary-label="Quero este!" (p-primary-action)="closeOk()">
+                    <po-widget class="po-md-3 " p-primary-label="Quero este!" (p-primary-action)="stepper.next()">
                             <img src="assets/hotel1.jpg" width="250" height="200" />
                             <div class="po-lg-12">
-                            <p class="po-font-title">R$ 810,00</p>
+                            <p class="po-font-title">R$ 100,00</p>
                             <p class="po-font-text-large-bold">Hotel Ibis - Av. Santo Amaro, 2340</p>
                             <p class="po-font-text">Quarto Individual</p>
                             <p class="po-font-text">Banheiro Privativo</p>
                             <p class="po-font-text">Café da manhã</p>
                             </div>
                     </po-widget>
-                    <po-widget class="po-md-3" p-primary-label="Quero este!" (p-primary-action)="closeOk()">
+                    <po-widget class="po-md-3" p-primary-label="Quero este!" (p-primary-action)="nobalance()">
                             <img src="assets/hotel2.jpg" width="250" height="200" />
                             <div class="po-lg-12">
-                            <p class="po-font-title">R$ 805,00</p>
+                            <p class="po-font-title">R$ 200,00</p>
                             <p class="po-font-text-large-bold">Hotel Lala - Av. Santos Dumont, 100</p>
                             <p class="po-font-text">Quarto compartilhado</p>
                             <p class="po-font-text">Banheiro compartilhado</p>
@@ -75,16 +72,20 @@
                 </po-widget>
 
         </po-step>
-    </po-stepper>
-</po-container>
-    <po-modal #modalOk p-size="sm" p-hide-close p-title="Sucesso!" [p-primary-action]="primaryAction">
-            <div class="po-xl-12 modalContext">
-                <img src="assets/check.gif">
-                <div>
-                    Oferta resgatada com sucesso! Tenha uma boa estadia!
+        <po-step p-label="Finalizar" [p-can-active-next-step]="validOffer">
+            <po-widget
+            p-height="500"
+            p-primary-label="Nova Solicitação"
+            (p-primary-action)="stepper.first()">
+                <div style="text-align: center;padding-top: 8%;">
+                    <img style="width: 10%;" src="assets/check.gif">
+                    <div>
+                        Oferta resgatada com sucesso! Tenha uma boa estadia!
+                    </div>
                 </div>
-            </div>
-
-        </po-modal>
+            </po-widget>
+        </po-step>
+    </po-stepper>
+</div>
     
 </po-page-default>

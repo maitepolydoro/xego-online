@@ -1,5 +1,5 @@
 <po-page-default p-title="Minhas Viagens">
-  <po-container style="height: 100%">
+  <div class="xego-container">
     <po-table p-hide-columns-manager="true" p-sort="true" [p-columns]="columns" [p-items]="items" [p-striped]="true">
       <ng-template p-table-row-template let-rowItem let-i="rowIndex" [p-table-row-template-show]="isNotApproved">
         <po-widget p-title="Status da solicitação">
@@ -8,7 +8,7 @@
         </po-widget>
       </ng-template>
     </po-table>
-  </po-container>
+  </div>
 
 
     
