@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PoTableColumn } from '@po-ui/ng-components';
 import { MenuItem, MessageService } from 'primeng/api';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
 
 @Component({
   selector: 'app-my-trips',
@@ -15,48 +19,12 @@ export class MyTripsComponent implements OnInit {
   items: Array<any>;
   itemsStep: MenuItem[];
   activeIndex: number = 1;
-
+  options: any;
   constructor(private messageService: MessageService) {}
 
   ngOnInit() {
-    this.columns = [
-      { property: 'id', width: "8%", label: 'Código', type: 'number' },
-      { property: 'hotelDescription', label: 'Data', },
-      { property: 'local', label: 'Local', },
-      { property: 'date', label: 'Data', type: 'date' },
-      {
-        property: 'status',
-        type: 'label',
-        labels: [
-          { value: 'approved', color: 'color-10', label: 'Aprovado' },
-          { value: 'pending', color: 'color-02', label: 'Em aprovação' },
-          { value: 'cancelled', color: 'color-07', label: 'Cancelado' },
-          { value: 'done', color: 'color-05', label: 'Concluído' },
-        ]
-      },
-      {
-        property: 'actions',
-        label: ' ',
-        type: 'icon',
-        icons: [          
-          {
-          icon: 'po-icon-print',
-          tooltip: 'Imprimir',
-          value: 'print'
-        },
-          {
-            icon: 'po-icon-copy',
-            tooltip: 'Duplicar',
-            value: 'duplicate'
-          },
-          {
-            icon: 'po-icon-delete',
-            tooltip: 'Cancelar',
-            value: 'cancel'
-          }
-        ]
-      }
-    ];
+    this.getTableColumns();
+    this.getCalendarOptions();
     this.items = [
       {
         id: 6521,
@@ -129,5 +97,60 @@ export class MyTripsComponent implements OnInit {
 
    isNotApproved(row, index: number) {
      return row.status !== 'done';
+   }
+
+   getCalendarOptions() {
+    this.options = {
+        plugins:[ dayGridPlugin, timeGridPlugin, interactionPlugin ],
+        defaultDate: '2017-02-01',
+        header: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        editable: true,
+        today: 'Today'
+    };
+   }
+
+   getTableColumns() {
+    this.columns = [
+      { property: 'id', width: "8%", label: 'Código', type: 'number' },
+      { property: 'hotelDescription', label: 'Data', },
+      { property: 'local', label: 'Local', },
+      { property: 'date', label: 'Data', type: 'date' },
+      {
+        property: 'status',
+        type: 'label',
+        labels: [
+          { value: 'approved', color: 'color-10', label: 'Aprovado' },
+          { value: 'pending', color: 'color-02', label: 'Em aprovação' },
+          { value: 'cancelled', color: 'color-07', label: 'Cancelado' },
+          { value: 'done', color: 'color-05', label: 'Concluído' },
+        ]
+      },
+      {
+        property: 'actions',
+        label: ' ',
+        type: 'icon',
+        icons: [          
+          {
+          icon: 'po-icon-print',
+          tooltip: 'Imprimir',
+          value: 'print'
+        },
+          {
+            icon: 'po-icon-copy',
+            tooltip: 'Duplicar',
+            value: 'duplicate'
+          },
+          {
+            icon: 'po-icon-delete',
+            tooltip: 'Cancelar',
+            value: 'cancel'
+          }
+        ]
+      }
+    ];
    }
 }

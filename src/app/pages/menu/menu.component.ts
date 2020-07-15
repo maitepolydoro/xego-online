@@ -62,13 +62,12 @@ export class MenuComponent implements OnInit {
             menuOptions = [
               { label: 'Dashboard', icon: 'po-icon po-icon-home', action: this.onClickMenu.bind(this)},    
               { label: 'Reservas', icon: 'po-icon po-icon-home', action: this.onClickMenu.bind(this)},    
-              { label: 'Nova solicitação', icon: 'po-icon po-icon-touch', action: this.onClickMenu.bind(this)},
             ];
             break;            
       default:
         break;
     }
-    menuOptions.push({ label: 'Meu Perfil', icon: 'po-icon po-icon-warehouse', action: this.onClickMenu.bind(this)})
+    menuOptions.push({ label: 'Meu Perfil', icon: 'po-icon po-icon-user', action: this.onClickMenu.bind(this)})
     menuOptions.push({ label: 'Sair', icon: 'po-icon po-icon-exit', action: this.onClickMenu.bind(this)})
 
     return menuOptions;
@@ -103,6 +102,15 @@ export class MenuComponent implements OnInit {
         }
       ];
       break;
+      case 3:  
+      notifications = [
+        {
+          icon: 'po-icon po-icon-exclamation',
+          label: 'Você recebeu novas propostas!',
+          type: 'warning'
+        }
+      ];
+      break;      
       default:
         break;
       }
@@ -131,7 +139,7 @@ export class MenuComponent implements OnInit {
       case 'Meu Perfil':
         this.router.navigate(['user-profile']);
         break;
-      case 'Pedidos':
+      case 'Reservas':
         this.router.navigate(['orders']);
         break;
       case 'Sair':

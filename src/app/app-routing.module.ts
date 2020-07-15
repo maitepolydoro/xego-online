@@ -9,18 +9,20 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { MyTripsComponent } from './pages/my-trips/my-trips.component';
 import { UserCrudComponent } from './pages/user-crud/user-crud.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent},
   { path: '', component: MenuComponent, canActivate: [AuthGuardService], children: [
-    { path: '', component: DashboardComponent, canActivate: [AuthGuardService]  },
+    { path: '', component: DashboardComponent, canActivate: [AuthGuardService] },
     { path: 'offer-request', component: OfferRequestComponent, canActivate: [AuthGuardService]  },
     { path: 'my-trips', component: MyTripsComponent, canActivate: [AuthGuardService]  },
     { path: 'user-profile', component: UserProfileComponent, canActivate: [AuthGuardService]  },
     { path: 'user-crud', component: UserCrudComponent, canActivate: [AuthGuardService]  },
     { path: 'payments', component: PaymentsComponent, canActivate: [AuthGuardService]  },
+    { path: 'orders', component: OrdersComponent, canActivate: [AuthGuardService]  },
   ]
   },
   {

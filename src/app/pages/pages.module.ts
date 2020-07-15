@@ -23,6 +23,8 @@ import { PoTagModule } from '@po-ui/ng-components';
 import {StepsModule} from 'primeng/steps';
 import {ButtonModule} from 'primeng/button';
 import { OrdersComponent } from './orders/orders.component';
+import {FullCalendarModule} from 'primeng/fullcalendar';
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [   
@@ -51,6 +53,8 @@ import { OrdersComponent } from './orders/orders.component';
     AppRoutingModule,
     PoModule,
     PoPageLoginModule,
+    CalendarModule,
+    FullCalendarModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCLcASkIq0DdzNy5ctQujinvC7iDwNga2c'
     })

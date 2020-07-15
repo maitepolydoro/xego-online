@@ -1,15 +1,26 @@
 <po-page-default p-title="Minhas Viagens">
   <div class="xego-container">
-    <po-table p-hide-columns-manager="true" p-sort="true" [p-columns]="columns" [p-items]="items" [p-striped]="true">
-      <ng-template p-table-row-template let-rowItem let-i="rowIndex" [p-table-row-template-show]="isNotApproved">
-        <po-widget p-title="Status da solicitação">
-            <p-steps [model]="rowItem.steps" [(activeIndex)]="rowItem.activeIndex" readonly="true"></p-steps>
-            <po-info *ngIf="rowItem.observation"  p-label="Observações" [p-value]="rowItem.observation"> </po-info>
-        </po-widget>
-      </ng-template>
-    </po-table>
+    <po-tabs>
+      <po-tab  p-active="true" p-label="Calendário">
+        <div class="calendar-custom">
+          <p-fullCalendar [options]="options"></p-fullCalendar>
+        </div>
+      </po-tab>
+      <po-tab p-label="Visualização em grid">
+        <div class="xego-container">
+          <po-table p-hide-columns-manager="true" p-sort="true" [p-columns]="columns" [p-items]="items" [p-striped]="true">
+            <ng-template p-table-row-template let-rowItem let-i="rowIndex" [p-table-row-template-show]="isNotApproved">
+              <po-widget p-title="Status da solicitação">
+                  <p-steps [model]="rowItem.steps" [(activeIndex)]="rowItem.activeIndex" readonly="true"></p-steps>
+                  <po-info *ngIf="rowItem.observation"  p-label="Observações" [p-value]="rowItem.observation"> </po-info>
+              </po-widget>
+            </ng-template>
+          </po-table>
+        </div>
+      </po-tab>
+    </po-tabs>
+  
   </div>
-
 
     
 </po-page-default>

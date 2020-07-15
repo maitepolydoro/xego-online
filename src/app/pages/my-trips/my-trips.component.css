@@ -29,3 +29,14 @@
 ::ng-deep .po-container {
     height: 100%;
 }
+
+
+::ng-deep .fc-button {
+        background-color: #2d353c;
+        color: #ffffff;
+        border-color: #2d353c;
+}
+
+.calendar-custom {
+    padding: 5%;
+}

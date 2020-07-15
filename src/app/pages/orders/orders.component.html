@@ -1,4 +1,8 @@
 <po-page-default p-title="Reservas">
     <div class="xego-container">
+        <po-table p-hide-columns-manager="true" p-sort="true" [p-columns]="columns" [p-striped]="true">
+            <ng-template p-table-row-template let-rowItem let-i="rowIndex">
+            </ng-template>
+          </po-table>
     </div>
 </po-page-default>
