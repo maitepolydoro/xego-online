@@ -47,9 +47,8 @@ export class MenuComponent implements OnInit {
       case 1:
         menuOptions = [
           { label: 'Dashboard', icon: 'po-icon po-icon-home', action: this.onClickMenu.bind(this)},  
-          { label: 'Nova solicitação', icon: 'po-icon po-icon-touch', action: this.onClickMenu.bind(this)},  
           { label: 'Colaboradores', icon: 'po-icon po-icon-calendar-ok', action: this.onClickMenu.bind(this)},
-          { label: 'Financeiro', icon: 'po-icon po-icon-money', action: this.onClickMenu.bind(this)}
+          { label: 'Meus Créditos', icon: 'po-icon po-icon-money', action: this.onClickMenu.bind(this)}
         ];
         break;
       case 2:
@@ -127,7 +126,7 @@ export class MenuComponent implements OnInit {
       case 'Nova solicitação':
         this.router.navigate(['/offer-request']);
       break;      
-      case 'Financeiro':
+      case 'Meus Créditos':
         this.router.navigate(['/payments']);
       break;
       case 'Colaboradores':
@@ -137,16 +136,16 @@ export class MenuComponent implements OnInit {
           this.router.navigate(['/my-trips']);
         break;
       case 'Meu Perfil':
-        this.router.navigate(['user-profile']);
+        this.router.navigate(['/user-profile']);
         break;
       case 'Reservas':
-        this.router.navigate(['orders']);
+        this.router.navigate(['/orders']);
         break;
       case 'Sair':
           this.logout();
         break;
       default:
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
         break;
     }   
   }

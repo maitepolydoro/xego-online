@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   properties: Array<string>;
   recovery: string;
   registerUrl: string;
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {
