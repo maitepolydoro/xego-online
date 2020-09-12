@@ -25,6 +25,7 @@ import {ButtonModule} from 'primeng/button';
 import { OrdersComponent } from './orders/orders.component';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import {CalendarModule} from 'primeng/calendar';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [   
@@ -47,6 +48,7 @@ import {CalendarModule} from 'primeng/calendar';
     TableModule,
     ButtonModule,
     StepsModule,
+    ProgressSpinnerModule,
     BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot([]),

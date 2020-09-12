@@ -14,3 +14,14 @@ agm-map {
     text-align: center;
 }
 
+.text-loading {
+    font-size: 13px;
+    color: #8e8787;
+}
+
+@keyframes ui-progress-spinner-color {
+    100%,
+    0% {
+        stroke: #2c056a;
+    }
+}

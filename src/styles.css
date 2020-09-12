@@ -5,10 +5,13 @@
 
 .xego-container {
     border-radius: 3px;
-    /* box-shadow: 0 1px 4px 0 rgba(0,0,0,.3); */
+   
     height: 100%;
     overflow-y: auto;
     padding: 16px;
     background-color: white;
 }
 
+.shadowed {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.3); 
+}
