@@ -22,10 +22,11 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PoTagModule } from '@po-ui/ng-components';
 import {StepsModule} from 'primeng/steps';
 import {ButtonModule} from 'primeng/button';
-import { OrdersComponent } from './orders/orders.component';
+import {OrdersComponent } from './orders/orders.component';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import {CalendarModule} from 'primeng/calendar';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   declarations: [   
@@ -44,6 +45,7 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     BrowserModule,
     ScrollingModule,
     PoTagModule,
+    CardModule,
     ChartModule,    
     TableModule,
     ButtonModule,

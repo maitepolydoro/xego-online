@@ -25,7 +25,7 @@
                             </po-widget>
                         </div> -->
                     </div>
-                     <div  class="po-lg-6 po-md-12">
+                     <!-- <div  class="po-lg-6 po-md-12">
                         <po-tabs class="po-sm-12">
                             <po-tab p-active="true" p-label="Faça sua oferta">
                                 <po-decimal p-icon="po-icon po-icon-finance" class="po-xl-6 po-sm-12 space-row" p-decimals-length="2" name="inputEditAverage" [(ngModel)]="inputAverage"
@@ -36,21 +36,41 @@
                                 p-label="Valor médio da oferta garantida: " [(ngModel)]="averagePrice" p-help="Nesse modo você poderá escolher sua oferta na hora!"></po-decimal>    
                             </po-tab>
                         </po-tabs>
-                    </div>  
+                    </div>   -->
                 </po-widget>
             </form> 
         </po-step>
         <po-step p-label="Tipo de oferta" [p-can-active-next-step]="validOffer">
-            <div class="xego-container shadowed">
-                <div style="text-align: center; padding-top: 10%;">
-                    <div><p-progressSpinner></p-progressSpinner></div>
-                    <div class="text-loading">Buscando Ofertas...</div>
-                </div>
+            <div style="display: flex;" class="xego-container shadowed">
+                <p-card class="xego-container " style="flex: 1;" header="Oferta garantida" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
+                    <p-header>
+                        <img src="assets/choose.png">
+                    </p-header>
+                    <p>Com essa opção, você escolhe qual hotel deseja de acordo com a localização que foi selecionada na busca. O pagamento é realizado na hora em que você escolher seu hotel de preferência. </p>
+                    <p-footer>
+                        <po-decimal readonly name="txtMedia" p-placeholder="0,00" p-label="Média da região"  p-icon="po-icon po-icon-finance"> </po-decimal>
+                        <po-button p-label="Escolher essa opção" p-icon="po-icon po-icon-ok" (p-click)="stepper.next()"></po-button>
+                    </p-footer>
+                </p-card>
+                <p-card class="xego-container" style="flex: 1;" header="Minha Oferta" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
+                    <p-header>
+                        <img src="assets/choose2.png">
+                    </p-header>
+                    <p>Com essa opção, você define o quanto quer pagar pelo hotel e retornaremos com a melhor opção para você em até 24hrs. </p>
+                    <p-footer>
+                        <po-decimal name="input" p-placeholder="0,00" p-label="Valor a pagar"  p-icon="po-icon po-icon-finance"> </po-decimal>
+                        <po-button p-label="Escolher essa opção" p-icon="po-icon po-icon-ok" (p-click)="stepper.next(3)"></po-button>
+                    </p-footer>
+                </p-card>
             </div> 
 
+            
         </po-step>
         <po-step p-label="Escolha a oferta" [p-can-active-next-step]="validOffer">
-            
+            <div style="text-align: center; padding-top: 10%;">
+                <div><p-progressSpinner></p-progressSpinner></div>
+                <div class="text-loading">Buscando Ofertas...</div>
+            </div>
         </po-step>
         <po-step p-label="Finalizar" [p-can-active-next-step]="validOffer">
             <po-widget

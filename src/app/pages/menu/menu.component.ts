@@ -54,7 +54,7 @@ export class MenuComponent implements OnInit {
       case 2:
           menuOptions = [
             { label: 'Nova solicitação', icon: 'po-icon po-icon-touch', action: this.onClickMenu.bind(this)},
-            { label: 'Minhas viagens', icon: 'po-icon po-icon-calendar-ok', action: this.onClickMenu.bind(this)},  
+            //{ label: 'Minhas viagens', icon: 'po-icon po-icon-calendar-ok', action: this.onClickMenu.bind(this)},  
           ];
           break;       
       case 3:
